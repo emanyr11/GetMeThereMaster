@@ -81,7 +81,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         {
             json_url = "https://getmethereapp.000webhostapp.com/n_timetable.php";
         }
-        String formattedDate = new SimpleDateFormat("MMM MM EEE, yyyy ").format(Calendar.getInstance().getTime());
+        String formattedDate = new SimpleDateFormat("MMM dd EEE, yyyy ").format(Calendar.getInstance().getTime());
         tv_date.setText(formattedDate);
     }
 
