@@ -87,19 +87,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
     class BackgroundTask extends AsyncTask<Void,Void,String>
     {
-        //String json_url;
+        
 
         @Override
         protected void onPreExecute() {
-          /*  if(email == "emanyr11@gmail.com")
-            {
-                json_url = "https://getmethereapp.000webhostapp.com/e_timetable.php";
-            }
-            else
-            {
-                json_url = "https://getmethereapp.000webhostapp.com/n_timetable.php";
-            }*/
-            //json_url = "https://getmethereapp.000webhostapp.com/e_timetable.php";
+         
         }
 
         @Override
