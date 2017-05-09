@@ -71,17 +71,17 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         pref = getActivity().getPreferences(0);
-        tv_name.setText(pref.getString(Constants.EMAIL,""));
-        email = tv_name.getText().toString();
-        if(email.equals("emanyr11@gmail.com"))
+        tv_name.setText(pref.getString(Constants.EMAIL,""));                                // Sets the textview tv_name to the string email retrived from the database
+        email = tv_name.getText().toString();                                               // Assigns tv_name string to email for comparision later in a if else ladder
+        if(email.equals("emanyr11@gmail.com"))                                              // If else ladder that compares emails with eachother to identify which JSON URL will be used later in the program
         {
-            json_url = "https://getmethereapp.000webhostapp.com/e_timetable.php";
+            json_url = "https://getmethereapp.000webhostapp.com/e_timetable.php";           // This JSON URL will be used to display the timetable of the user with email "emanyr11@gmail.com"
         }
         else if (email.equals("nitish@gmail.com"))
         {
-            json_url = "https://getmethereapp.000webhostapp.com/n_timetable.php";
+            json_url = "https://getmethereapp.000webhostapp.com/n_timetable.php";            // This JSON URL will be used to display the timetable of the user with email "nitish@gmail.com"
         }
-        String formattedDate = new SimpleDateFormat("MMM dd EEE, yyyy ").format(Calendar.getInstance().getTime());
+        String formattedDate = new SimpleDateFormat("MMM dd EEE, yyyy ").format(Calendar.getInstance().getTime());      // This assigns a date format too formatted date which will be used
         tv_date.setText(formattedDate);
     }
 
@@ -99,22 +99,22 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
             try {
                 URL url = new URL(json_url);
                 try {
-                    HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
-                    InputStream inputStream = httpURLConnection.getInputStream();
-                    BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
-                    StringBuilder stringBuilder = new StringBuilder();
-                    while((JSON_STRING = br.readLine())!= null)
+                    HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();          // Creates an open URL connection
+                    InputStream inputStream = httpURLConnection.getInputStream();                           // Creates an input stream
+                    BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));             // Assigns an inputstream to a buffered reader
+                    StringBuilder stringBuilder = new StringBuilder();                                      // Creats a new stringbuilder
+                    while((JSON_STRING = br.readLine())!= null)                                             // Uses a buffered reader to go through the file and assign it to JSON_String                                        
                     {
-                        stringBuilder.append(JSON_STRING+"\n");
+                        stringBuilder.append(JSON_STRING+"\n");                                             // Creates New line at the end of a line
                     }
-                    br.close();
-                    inputStream.close();
-                    httpURLConnection.disconnect();
-                    JSON_STRING = stringBuilder.toString().trim();
-                    JSONObject parentObject = new JSONObject(JSON_STRING);
-                    JSONArray parentArray = parentObject.getJSONArray("server_response");
-                    JSONObject finalObject = parentArray.getJSONObject(0);
-                    String classStart = finalObject.getString("Class Start");
+                    br.close();                                                                             // Closes the buffered reader
+                    inputStream.close();                                                                    // Closes the input stream
+                    httpURLConnection.disconnect();                                                         // Disconnects the HTTP connection                               
+                    JSON_STRING = stringBuilder.toString().trim();                                                                                                                               
+                    JSONObject parentObject = new JSONObject(JSON_STRING);                                  // Creates a New JSON object that holds eceyrthing in the JSON String
+                    JSONArray parentArray = parentObject.getJSONArray("server_response");                   // Creates a JSON array using the array stored in the server
+                    JSONObject finalObject = parentArray.getJSONObject(0);                                  // Indicates the object in the array that is going to be displyed
+                    String classStart = finalObject.getString("Class Start");                               // Find the ID of the values in the array
                     String classFinish = finalObject.getString("Class Finish");
                     String location = finalObject.getString("Location");
                     String paper = finalObject.getString("Paper");
@@ -123,7 +123,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                     String classFinish2 = finalObject2.getString("Class Finish");
                     String location2 = finalObject2.getString("Location");
                     String paper2 = finalObject2.getString("Paper");
-                    J_STRING1 ="Class Time: "+classStart  + " - " + classFinish +"\nLocation: "+ location + "\nPaper: " + paper;
+                    J_STRING1 ="Class Time: "+classStart  + " - " + classFinish +"\nLocation: "+ location + "\nPaper: " + paper;                // Display the data which has been Parsed
                     J_STRING2 ="Class Time: "+classStart2  + " - " + classFinish2 +"\nLocation: "+ location2 + "\nPaper: " + paper2;
                     return stringBuilder.toString().trim();
                 } catch (IOException e) {
