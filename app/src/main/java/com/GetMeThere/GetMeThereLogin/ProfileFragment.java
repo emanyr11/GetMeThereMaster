@@ -84,7 +84,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         String formattedDate = new SimpleDateFormat("MMM dd EEE, yyyy ").format(Calendar.getInstance().getTime());      // This assigns a date format too formatted date which will be used
         tv_date.setText(formattedDate);
     }
-
+    /*
+     * For the design of the timetable to conform to that decided by the team I was not able to insert buttons to insert and 
+     * to parse the data. This has been overcome by injecting and parsing the data using JSON objects/arrays
+     * and printing it in a String. This means if you login it will not display, but when you run the code again it will.
+     * This is only a temporary fix till next sprint where a better alternative is found - Emmanuel
+     */
     class BackgroundTask extends AsyncTask<Void,Void,String>
     {
         
