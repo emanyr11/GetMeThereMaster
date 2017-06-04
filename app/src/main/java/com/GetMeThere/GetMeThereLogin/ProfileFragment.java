@@ -52,7 +52,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Url;
 
 //We will use a navigation drawer to overcome the issue Eman is facing with the passing of the JSON file.
-
+// ALter Json output to be implemented with a button push
+// Use a draw to display option of time tables
+// Check SQl insert to find error with multiple inputs(!result may work)
+// Recreate the ASYNC task implementing methods with buttons 
 public class ProfileFragment extends Fragment implements View.OnClickListener{
 
     private TextView tv_name,tv_class,tv_class2,tv_message,tv_date;
