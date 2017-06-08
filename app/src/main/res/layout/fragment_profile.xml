@@ -51,14 +51,23 @@
         android:textColor="@color/colorAccent"
         />
 
-   <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_chg_password"
-        android:layout_marginTop="90dp"
-        android:text="Change Password"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/white"
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_show_class"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="25dp"
+        android:layout_marginTop="90dp"
+        android:background="@color/colorPrimary"
+        android:text="Display Class"
+        android:textColor="@android:color/white" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_chg_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:text="Change Password"
+        android:textColor="@android:color/white" />
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_logout"
