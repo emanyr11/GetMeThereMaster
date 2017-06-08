@@ -155,7 +155,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
         @Override
         protected void onPostExecute(String result) {
-          //tv_class.setText(result);
             tv_class.setText(J_STRING1);
             tv_class2.setText(J_STRING2);
         }
@@ -165,9 +164,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile,container,false);
-       // View view2 = inflater.inflate(R.layout.navigation_bar,container,false);
         initViews(view);
-        //initViews(view2);
         return view;
     }
 
@@ -175,7 +172,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
 
     private void initViews(View view){
-        //new BackgroundTask().execute();
         tv_name = (TextView)view.findViewById(R.id.tv_name);
         tv_date = (TextView)view.findViewById(R.id.tv_date);
         tv_class = (TextView)view.findViewById(R.id.tv_class);
