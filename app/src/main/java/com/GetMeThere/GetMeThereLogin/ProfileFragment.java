@@ -104,7 +104,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         protected void onPreExecute() {
          
         }
-
+        // Change is here
         @Override
         protected String doInBackground(Void... voids) {
             try {
@@ -165,7 +165,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile,container,false);
+       // View view2 = inflater.inflate(R.layout.navigation_bar,container,false);
         initViews(view);
+        //initViews(view2);
         return view;
     }
 
