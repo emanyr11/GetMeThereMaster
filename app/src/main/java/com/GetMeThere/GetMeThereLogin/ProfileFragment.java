@@ -262,15 +262,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         ft.replace(R.id.fragment_frame,login);
         ft.commit();
     }
-
-    /*private void goToMaps(){
-
-        FragmentActivity maps = new MapsActivity();
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment_frame, maps);
-        ft.commit();
-    }*/
-
     private void changePasswordProcess(String email,String old_password,String new_password){
 
         Retrofit retrofit = new Retrofit.Builder()
