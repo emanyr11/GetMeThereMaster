@@ -19,7 +19,7 @@
         <!--Change the activity here to MainActivity when running the APP otherwise it will show the
        maps all the time -->
 
-       <activity android:name=".MainActivity"> <!--activity android:name=".MainActivity"-->
+       <activity android:name=".MapsActivity"> <!--activity android:name=".MainActivity"-->
        maps all the time -->
            <intent-filter>
                <action android:name="android.intent.action.MAIN" />
@@ -27,6 +27,15 @@
                <category android:name="android.intent.category.LAUNCHER" />
            </intent-filter>
        </activity>
+
+        <activity android:name=".MainActivity"> <!--activity android:name=".MainActivity"-->
+            maps all the time -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
        <meta-data
            android:name="com.google.android.geo.API_KEY"
