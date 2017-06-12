@@ -43,7 +43,7 @@ import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-//We will use a navigation drawer to overcome the issue Eman is facing with the passing of the JSON file.
+// We will use a navigation drawer to overcome the issue Eman is facing with the passing of the JSON file.
 // ALter Json output to be implemented with a button push
 // Use a draw to display option of time tables
 // Check SQl insert to find error with multiple inputs(!result may work)
@@ -146,11 +146,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
         @Override
         protected void onPostExecute(String result) {
-            tv_class.setText(J_STRING1);
+            tv_class.setText(J_STRING1);                            // Assigns the contents of the string to the text view associated
             tv_class2.setText(J_STRING2);
         }
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -158,10 +157,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         initViews(view);
         return view;
     }
-
-
-
-
+    // This function is used to initialize the views by the ID associated with them
+    // This function also assigns a Listener to the buttons
     private void initViews(View view){
         tv_name = (TextView)view.findViewById(R.id.tv_name);
         tv_date = (TextView)view.findViewById(R.id.tv_date);
@@ -177,10 +174,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         btn_logout.setOnClickListener(this);
 
     }
-
-
+    // This Functions is called when a user pushes the changes password button
     private void showDialog(){
-
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.dialog_change_password, null);
@@ -222,7 +217,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                 }
             });
     }
-
+    // This function is used to assign function calls to a buttons use a case switch ladder
+    // We use intents to initiate other activities from within this fragment
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -240,12 +236,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                 logout();
                 break;
             case R.id.btn_transport_timetable:
-                Intent webview = new Intent(getActivity(), WebActivity.class);
-                startActivity(webview);
+                Intent intent2 = new Intent(getActivity(), WebActivity.class);
+                startActivity(intent2);
                 break;
         }
     }
-
+    // This function is called when the logout button is pressed
+    // It sets the log in to false and clears the constants
     private void logout() {
         SharedPreferences.Editor editor = pref.edit();
         editor.putBoolean(Constants.IS_LOGGED_IN,false);
@@ -255,16 +252,15 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         editor.apply();
         goToLogin();
     }
-
+    // Function called in logout to complete the process
     private void goToLogin(){
-
         Fragment login = new LoginFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.fragment_frame,login);
         ft.commit();
     }
-
-
+    // This is the function called within the show dialouge function.
+    // It is used to process the changing of passwords using an interface
     private void changePasswordProcess(String email,String old_password,String new_password){
 
         Retrofit retrofit = new Retrofit.Builder()
