@@ -53,7 +53,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     private TextView tv_name,tv_class,tv_class2,tv_message,tv_date;
     private SharedPreferences pref;
     private long date = System.currentTimeMillis();
-    private AppCompatButton btn_change_password,btn_logout,btn_show_class,btn_show_map;
+    private AppCompatButton btn_change_password,btn_logout,btn_show_class,btn_show_map,btn_transport_timetable;
     private EditText et_old_password,et_new_password;
     private AlertDialog dialog;
     private ProgressBar progress;
@@ -168,7 +168,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         btn_logout = (AppCompatButton)view.findViewById(R.id.btn_logout);
         btn_show_class = (AppCompatButton)view.findViewById(R.id.btn_show_class);
         btn_show_map = (AppCompatButton)view.findViewById(R.id.btn_show_map);
+        btn_transport_timetable = (AppCompatButton)view.findViewById(R.id.btn_transport_timetable);
         btn_show_map.setOnClickListener(this);
+        btn_transport_timetable.setOnClickListener(this);
         btn_show_class.setOnClickListener(this);
         btn_change_password.setOnClickListener(this);
         btn_logout.setOnClickListener(this);
