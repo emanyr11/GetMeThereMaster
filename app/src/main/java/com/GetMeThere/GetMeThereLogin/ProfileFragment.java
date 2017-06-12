@@ -1,7 +1,5 @@
 package com.GetMeThere.GetMeThereLogin;
 
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -14,34 +12,27 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.GetMeThere.GetMeThereLogin.models.ServerRequest;
 import com.GetMeThere.GetMeThereLogin.models.ServerResponse;
 import com.GetMeThere.GetMeThereLogin.models.User;
-import com.google.gson.JsonArray;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -51,7 +42,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Url;
 
 //We will use a navigation drawer to overcome the issue Eman is facing with the passing of the JSON file.
 // ALter Json output to be implemented with a button push
@@ -249,6 +239,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
             case R.id.btn_logout:
                 logout();
                 break;
+            case R.id.btn_transport_timetable:
+                Intent webview = new Intent(getActivity(), WebActivity.class);
+                startActivity(webview);
+                break;
         }
     }
 
@@ -269,6 +263,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         ft.replace(R.id.fragment_frame,login);
         ft.commit();
     }
+
+
     private void changePasswordProcess(String email,String old_password,String new_password){
 
         Retrofit retrofit = new Retrofit.Builder()

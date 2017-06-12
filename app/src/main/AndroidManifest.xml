@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,19 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--Change the activity here to MainActivity when running the APP otherwise it will show the
-       maps all the time -->
+        <!--
+       Change the activity here to MainActivity when running the APP otherwise it will show the
+       maps all the time
+        -->
 
-       <activity android:name=".MapsActivity"> <!--activity android:name=".MainActivity"-->
-       maps all the time -->
-           <intent-filter>
-               <action android:name="android.intent.action.MAIN" />
-
-               <category android:name="android.intent.category.LAUNCHER" />
-           </intent-filter>
-       </activity>
-
-        <activity android:name=".MainActivity"> <!--activity android:name=".MainActivity"-->
+        <activity android:name=".MainActivity"> <!-- activity android:name=".MainActivity" -->
             maps all the time -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,9 +29,29 @@
             </intent-filter>
         </activity>
 
-       <meta-data
-           android:name="com.google.android.geo.API_KEY"
-           android:value="@string/google_maps_key" />
-   </application>
+        <activity android:name=".MapsActivity"> <!-- activity android:name=".MainActivity" -->
+            maps all the time -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".WebActivity"> <!-- activity android:name=".MainActivity" -->
+            maps all the time -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <!--<activity android:name=".WebActivity"></activity>-->
+    </application>
 
 </manifest>

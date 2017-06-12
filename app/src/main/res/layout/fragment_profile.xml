@@ -62,7 +62,8 @@
         android:layout_marginTop="90dp"
         android:background="@color/colorPrimary"
         android:text="Display Class"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:layout_weight="0.04" />
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_show_map"
@@ -71,12 +72,23 @@
         android:layout_marginTop="10dp"
         android:background="@color/colorPrimary"
         android:text="Display Map"
+        android:textColor="@android:color/white"
+        android:layout_weight="0.03" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_transport_timetable"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.03"
+        android:background="@color/colorPrimary"
+        android:text="Transport Timetable"
         android:textColor="@android:color/white" />
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_chg_password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_marginTop="10dp"
         android:background="@color/colorPrimary"
         android:text="Change Password"
@@ -85,7 +97,7 @@
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="28dp"
         android:layout_marginTop="1dp"
         android:background="@color/colorPrimary"
         android:text="Logout"
@@ -97,9 +109,6 @@
         app:menu="@menu/navigation_menu"
         android:layout_gravity = "start"
         >
-
-
-
 
     </android.support.design.widget.NavigationView>
 
