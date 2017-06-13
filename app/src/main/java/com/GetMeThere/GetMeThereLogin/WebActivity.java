@@ -13,7 +13,9 @@ public class WebActivity extends AppCompatActivity {
         setContentView(R.layout.activity_web);
         WebView view = (WebView) this.findViewById(R.id.webView);
         view.setWebViewClient(new WebViewClient());
+        view.getSettings().setDomStorageEnabled(true);
         view.getSettings().setJavaScriptEnabled(true);
-        view.loadUrl("https://at.govt.nz/bus-train-ferry/");
+        view.getSettings().setAllowContentAccess(true);
+        view.loadUrl("https://at.govt.nz/bus-train-ferry/real-time-board/");
     }
 }

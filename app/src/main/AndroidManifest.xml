@@ -29,8 +29,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MapsActivity"> <!-- activity android:name=".MainActivity" -->
-            maps all the time -->
+        <activity android:name=".MapsActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,8 +38,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".WebActivity"> <!-- activity android:name=".MainActivity" -->
-            maps all the time -->
+        <activity android:name=".WebActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -69,7 +69,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <!--<activity android:name=".WebActivity"></activity>-->
-    </application>
+    </application>-->
 
 </manifest>

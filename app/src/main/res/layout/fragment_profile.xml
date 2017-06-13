@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
+
 <LinearLayout
     android:orientation="vertical"
     android:layout_marginLeft="40dp"
@@ -12,6 +13,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
+
     <TextView
         android:id="@+id/tv_date"
         android:layout_marginTop="-40dp"
@@ -58,7 +60,7 @@
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_show_class"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="28dp"
         android:layout_marginTop="90dp"
         android:background="@color/colorPrimary"
         android:text="Display Class"
@@ -68,19 +70,19 @@
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_show_map"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="28dp"
         android:layout_marginTop="10dp"
         android:background="@color/colorPrimary"
         android:text="Display Map"
         android:textColor="@android:color/white"
-        android:layout_weight="0.03" />
+        android:layout_weight="0.04" />
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_transport_timetable"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="28dp"
         android:layout_marginTop="10dp"
-        android:layout_weight="0.03"
+        android:layout_weight="0.04"
         android:background="@color/colorPrimary"
         android:text="Transport Timetable"
         android:textColor="@android:color/white" />
@@ -88,8 +90,9 @@
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_chg_password"
         android:layout_width="match_parent"
-        android:layout_height="32dp"
+        android:layout_height="28dp"
         android:layout_marginTop="10dp"
+        android:layout_weight="0.04"
         android:background="@color/colorPrimary"
         android:text="Change Password"
         android:textColor="@android:color/white" />
@@ -98,7 +101,8 @@
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="28dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.04"
         android:background="@color/colorPrimary"
         android:text="Logout"
         android:textColor="@android:color/white" />
