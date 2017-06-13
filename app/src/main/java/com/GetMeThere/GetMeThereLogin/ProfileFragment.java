@@ -238,7 +238,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                 logout();
                 break;
             case R.id.btn_transport_timetable:
-                Intent intent2 = new Intent(getActivity(), WebActivity.class);
+                Intent intent2 = new Intent(getActivity(), Transport_Activity.class);
                 startActivity(intent2);
                 break;
         }
