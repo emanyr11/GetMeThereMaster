@@ -27,7 +27,7 @@ public class LoginTest {
 
     @Before
     public void initVariables(){
-
+        // test
         mEmail = "emanyr11@gmail.com";
         mPassword = "eman123";
     }
